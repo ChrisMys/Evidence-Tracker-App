@@ -1,0 +1,199 @@
+body {
+    background: black;
+}
+
+.first-evidence li a img,
+.second-evidence li a img,
+.third-evidence li a img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.first-evidence,
+.second-evidence,
+.third-evidence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 600px;
+    position: relative;
+}
+
+.first-evidence li a img:hover,
+.first-evidence li a img:focus,
+.second-evidence li a img:hover,
+.second-evidence li a img:focus,
+.third-evidence li a img:hover,
+.third-evidence li a img:focus,
+.reset p a:hover,
+.reset p a:focus,
+.result input:hover,
+.result input:focus {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.5;
+}
+
+.container.ghost-finder {
+    padding: 50px 0px;
+}
+
+.reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.reset p a {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3rem;
+    border: 1px solid white;
+    padding: 20px 30px;
+    border-radius: 30px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.result input {
+    background: black;
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    width: 50%;
+    font-size: 3rem;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.emf-five a, .fingerprints a, .freezing a, .ghost-orbs a, .ghost-writing a, .spirit-box a {
+    position: relative;
+}
+
+.emf-five a:before {
+    content: 'EMF5';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: -25px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.fingerprints a:before {
+    content: 'Fingerprints';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: -10px;
+    right: 0;
+    text-align: center;
+    bottom: -25px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.freezing a:before {
+    content: 'Freezing';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: -25px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.ghost-orbs a:before {
+    content: 'Ghost Orbs';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: -10px;
+    right: 0;
+    text-align: center;
+    bottom: -25px;
+    color: white;
+    font-size: 1.5rem;
+    width: 70px;
+}
+
+.ghost-writing a:before {
+    content: 'Ghost Writing';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: -25px;
+    right: 0;
+    text-align: center;
+    bottom: -25px;
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+.spirit-box a:before {
+    content: 'Spirit Box';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: -25px;
+    right: 0;
+    text-align: center;
+    bottom: -25px;
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+.second-evidence .emf-five,
+.second-evidence .fingerprints,
+.second-evidence .freezing,
+.second-evidence .ghost-orbs,
+.second-evidence .ghost-writing,
+.second-evidence .spirit-box {
+    opacity: 0;
+}
+
+.third-evidence .emf-five,
+.third-evidence .fingerprints,
+.third-evidence .freezing,
+.third-evidence .ghost-orbs,
+.third-evidence .ghost-writing,
+.third-evidence .spirit-box {
+    opacity: 0;
+}
+
+.active {
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 20px;
+}

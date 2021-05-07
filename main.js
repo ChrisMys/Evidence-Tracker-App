@@ -651,6 +651,7 @@ document.querySelector('.third-evidence .emf-five').addEventListener('click', fu
         // HIDE THIS
 
         document.querySelector('.third-evidence .freezing').style.opacity = '0';
+        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
 
     } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
 
@@ -661,6 +662,7 @@ document.querySelector('.third-evidence .emf-five').addEventListener('click', fu
         // HIDE THIS
 
         document.querySelector('.third-evidence .freezing').style.opacity = '0';
+        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
 
     } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
 
@@ -1074,6 +1076,7 @@ document.querySelector('.third-evidence .ghost-orbs').addEventListener('click', 
         // HIDE THIS 
 
         document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
+        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
 
     } else if (secondEvidence === "ghostWriting" && firstEvidence === "emfFive") {
 
@@ -1084,6 +1087,7 @@ document.querySelector('.third-evidence .ghost-orbs').addEventListener('click', 
         // HIDE THIS 
 
         document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
+        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
 
     } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
 

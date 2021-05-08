@@ -5,25 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghost Finder</title>
-    <link rel="stylesheet" href="atom.css">
+    <link rel="stylesheet" href="atom.css">   
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 result">
+        <div class="col-sm-6 creator">
             <h1>Phasmophobia Cheat Sheet <em>By: Crees</em></h1>
-            <input id="ghost-type" type="text">
+        </div>
+        <div class="col-sm-6 result">
+            <fieldset>
+                <legend>Ghost Type</legend>
+                <h2 id="ghost-type"></h2>
+            </fieldset>
         </div>
     </div>
 </div>
 
 <div class="container-fluid ghost-finder">
     <div class="row">
-        <div class="col-sm-2 first-evidence">
-            <ul class="first-evidence">
+        <div class="col-sm-2 firstEvidence">
+            <ul class="firstEvidence">
                 <li class="emf-five"><a href="#"><img src="images/remote-control.png" alt="EMF5"></a></li>
                 <li class="fingerprints"><a href="#"><img src="images/fingerprint.png" alt="Fingerprints"></a></li>
                 <li class="freezing"><a href="#"><img src="images/cold.png" alt="Freezing Temperatures"></a></li>
@@ -32,8 +38,8 @@
                 <li class="spirit-box"><a href="#"><img src="images/walkie-talkie.png" alt="Spirit Box"></a></li>
             </ul>
         </div>
-        <div class="col-sm-2 second-evidence">
-            <ul class="second-evidence">
+        <div class="col-sm-2 secondEvidence">
+            <ul class="secondEvidence">
                 <li class="emf-five"><a href="#"><img src="images/remote-control.png" alt="EMF5"></a></li>
                 <li class="fingerprints"><a href="#"><img src="images/fingerprint.png" alt="Fingerprints"></a></li>
                 <li class="freezing"><a href="#"><img src="images/cold.png" alt="Freezing Temperatures"></a></li>
@@ -42,8 +48,8 @@
                 <li class="spirit-box"><a href="#"><img src="images/walkie-talkie.png" alt="Spirit Box"></a></li>
             </ul>
         </div>
-        <div class="col-sm-2 third-evidence">
-            <ul class="third-evidence">
+        <div class="col-sm-2 thirdEvidence">
+            <ul class="thirdEvidence">
                 <li class="emf-five"><a href="#"><img src="images/remote-control.png" alt="EMF5"></a></li>
                 <li class="fingerprints"><a href="#"><img src="images/fingerprint.png" alt="Fingerprints"></a></li>
                 <li class="freezing"><a href="#"><img src="images/cold.png" alt="Freezing Temperatures"></a></li>
@@ -53,7 +59,6 @@
             </ul>
         </div>
         <div class="col-sm-6 important-info">
-            <fieldset>
                 <label for="ghostname">Ghost Name:</label>
                 <input id="ghost-name" type="text">
                 <label for="ghostname">Mission 1:</label>
@@ -98,14 +103,13 @@
                     <option value="objecvtive">Escape During a Hunt</option>
                     <option value="objecvtive">Average Sanity Below 25%</option>
                 </select>
-            </fieldset>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 reset">
+        <div class="col-sm-6 offset-sm-6 reset">
             <p><a id="game-reset" href="#">Reset</a></p>
         </div>
     </div>

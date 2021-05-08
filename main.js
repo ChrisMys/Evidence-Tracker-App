@@ -1442,5 +1442,9 @@ document.querySelector('#game-reset').addEventListener('click', function() {
     document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
 
     document.querySelector('#ghost-type').value = '';
+    document.querySelector('#ghost-name').value = '';
+    document.querySelector('#mission-one').value = 'default';
+    document.querySelector('#mission-two').value = 'default';
+    document.querySelector('#mission-three').value = 'default';
 
 });

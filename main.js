@@ -3,1445 +3,1936 @@
 let firstEvidence = '';
 let secondEvidence = '';
 let thirdEvidence = '';
+let clickedTimeOne = 0;
+let clickedTimeTwo = 0;
+let clickedTimeThree = 0;
 
-// FIRST EVIDENCE --------------------------------------------------------------------------------------------------------->
+// METHODS START HERE ------------------------------------------------------------------------>
 
-document.querySelector('.first-evidence .emf-five').addEventListener('click', function() {
+function removeFirstActive() {
 
-    firstEvidence = "emfFive";
+    firstEvidence = "";
 
-    // SHOW THIS
+    clickedTimeOne = 0;
 
-    document.querySelector('.second-evidence .fingerprints').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-orbs').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-writing').style.opacity = '1';
-    document.querySelector('.second-evidence .freezing').style.opacity = '1';
-    document.querySelector('.second-evidence .spirit-box').style.opacity = '1';
+    document.querySelector('#ghost-type').textContent = '';
 
-    // HIDE THIS
+    document.querySelector(".firstEvidence .emf-five").classList.remove('active');
+    document.querySelector(".firstEvidence .fingerprints").classList.remove('active');
+    document.querySelector(".firstEvidence .freezing").classList.remove('active');
+    document.querySelector(".firstEvidence .ghost-orbs").classList.remove('active');
+    document.querySelector(".firstEvidence .ghost-writing").classList.remove('active');
+    document.querySelector(".firstEvidence .spirit-box").classList.remove('active');
 
-    document.querySelector('.first-evidence .fingerprints').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-orbs').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-writing').style.opacity = '0';
-    document.querySelector('.first-evidence .freezing').style.opacity = '0';
-    document.querySelector('.first-evidence .spirit-box').style.opacity = '0';   
+}
 
-});
+function removeSecondActive() {
 
-document.querySelector('.first-evidence .fingerprints').addEventListener('click', function() {
+    secondEvidence = "";
 
-    firstEvidence = "fingerprints";
+    clickedTimeTwo = 0;
 
-    // SHOW THIS
+    document.querySelector('#ghost-type').textContent = '';
 
-    document.querySelector('.second-evidence .emf-five').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-orbs').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-writing').style.opacity = '1';
-    document.querySelector('.second-evidence .freezing').style.opacity = '1';
-    document.querySelector('.second-evidence .spirit-box').style.opacity = '1';  
+    document.querySelector(".secondEvidence .emf-five").classList.remove('active');
+    document.querySelector(".secondEvidence .fingerprints").classList.remove('active');
+    document.querySelector(".secondEvidence .freezing").classList.remove('active');
+    document.querySelector(".secondEvidence .ghost-orbs").classList.remove('active');
+    document.querySelector(".secondEvidence .ghost-writing").classList.remove('active');
+    document.querySelector(".secondEvidence .spirit-box").classList.remove('active');
+
+}
+
+function removeSecondEvidence() {
+
+    document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+    document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+    document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+    document.querySelector('.secondEvidence .freezing').style.display = 'none';
+    document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+    document.querySelector('.secondEvidence .emf-five').style.display = 'none';
     
-    // HIDE THIS
+}
 
-    document.querySelector('.first-evidence .emf-five').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-orbs').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-writing').style.opacity = '0';
-    document.querySelector('.first-evidence .freezing').style.opacity = '0';
-    document.querySelector('.first-evidence .spirit-box').style.opacity = '0';
+function removeThirdActive() {
 
-});
+    thirdEvidence = "";
 
-document.querySelector('.first-evidence .freezing').addEventListener('click', function() {
+    clickedTimeThree = 0;
 
-    firstEvidence = "freezing";
+    document.querySelector('#ghost-type').textContent = '';
 
-    // SHOW THIS
+    document.querySelector(".thirdEvidence .emf-five").classList.remove('active');
+    document.querySelector(".thirdEvidence .fingerprints").classList.remove('active');
+    document.querySelector(".thirdEvidence .freezing").classList.remove('active');
+    document.querySelector(".thirdEvidence .ghost-orbs").classList.remove('active');
+    document.querySelector(".thirdEvidence .ghost-writing").classList.remove('active');
+    document.querySelector(".thirdEvidence .spirit-box").classList.remove('active');
 
-    document.querySelector('.second-evidence .fingerprints').style.opacity = '1';
-    document.querySelector('.second-evidence .emf-five').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-orbs').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-writing').style.opacity = '1';
-    document.querySelector('.second-evidence .spirit-box').style.opacity = '1';  
+}
+
+function removeThirdEvidence() {
+
+    document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+    document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+    document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+    document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+    document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+    document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
     
-    // HIDE THIS
+}
 
-    document.querySelector('.first-evidence .emf-five').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-orbs').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-writing').style.opacity = '0';
-    document.querySelector('.first-evidence .fingerprints').style.opacity = '0';
-    document.querySelector('.first-evidence .spirit-box').style.opacity = '0';
+// CODE STARTS HERE -------------------------------------------------------------------------->
 
-});
+document.querySelector('.firstEvidence .emf-five').addEventListener('click', function() {
 
-document.querySelector('.first-evidence .ghost-orbs').addEventListener('click', function() {
+    clickedTimeOne++;
 
-    firstEvidence = "ghostOrbs";
+    if (clickedTimeOne % 2 == 1) {
 
-    // SHOW THIS
+        firstEvidence = "emfFive";
 
-    document.querySelector('.second-evidence .emf-five').style.opacity = '1';
-    document.querySelector('.second-evidence .spirit-box').style.opacity = '1';
-    document.querySelector('.second-evidence .freezing').style.opacity = '1';
-    document.querySelector('.second-evidence .fingerprints').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-writing').style.opacity = '1'; 
+        document.querySelector(".firstEvidence .emf-five").classList.add('active');
+
+        document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+        document.querySelector('.secondEvidence .freezing').style.display = 'block';
+        document.querySelector('.secondEvidence .spirit-box').style.display = 'block'; 
+
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'none';
+        document.querySelector('.firstEvidence .freezing').style.display = 'none';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'none'; 
+        
+    } else if (clickedTimeOne % 2 == 0) {
+
+        removeFirstActive();
+        removeSecondActive();
+        removeSecondEvidence();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'block';
+        document.querySelector('.firstEvidence .freezing').style.display = 'block';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'block';
+
+    }
     
-    // HIDE THIS
+});
 
-    document.querySelector('.first-evidence .emf-five').style.opacity = '0';
-    document.querySelector('.first-evidence .fingerprints').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-writing').style.opacity = '0';
-    document.querySelector('.first-evidence .freezing').style.opacity = '0';
-    document.querySelector('.first-evidence .spirit-box').style.opacity = '0';
+document.querySelector('.firstEvidence .fingerprints').addEventListener('click', function() {
+
+    clickedTimeOne++;
+
+    if (clickedTimeOne % 2 == 1) {
+
+        firstEvidence = "fingerprints";
+
+        document.querySelector(".firstEvidence .fingerprints").classList.add('active');
+
+        document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+        document.querySelector('.secondEvidence .freezing').style.display = 'block';
+        document.querySelector('.secondEvidence .spirit-box').style.display = 'block';  
+
+        document.querySelector('.firstEvidence .emf-five').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'none';
+        document.querySelector('.firstEvidence .freezing').style.display = 'none';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'none';
+
+    } else if (clickedTimeOne % 2 == 0) {
+
+        removeFirstActive();
+        removeSecondActive();
+        removeSecondEvidence();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        document.querySelector('.firstEvidence .emf-five').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'block';
+        document.querySelector('.firstEvidence .freezing').style.display = 'block';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'block';
+
+    }
 
 });
 
-document.querySelector('.first-evidence .ghost-writing').addEventListener('click', function() {
+document.querySelector('.firstEvidence .freezing').addEventListener('click', function() {
 
-    firstEvidence = "ghostWriting";
+    clickedTimeOne++;
 
-    // SHOW THIS
+    if (clickedTimeOne % 2 == 1) {
 
-    document.querySelector('.second-evidence .freezing').style.opacity = '1';
-    document.querySelector('.second-evidence .spirit-box').style.opacity = '1';
-    document.querySelector('.second-evidence .emf-five').style.opacity = '1';
-    document.querySelector('.second-evidence .fingerprints').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-orbs').style.opacity = '1'; 
-    
-    // HIDE THIS
+        firstEvidence = "freezing";
 
-    document.querySelector('.first-evidence .emf-five').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-orbs').style.opacity = '0';
-    document.querySelector('.first-evidence .fingerprints').style.opacity = '0';
-    document.querySelector('.first-evidence .freezing').style.opacity = '0';
-    document.querySelector('.first-evidence .spirit-box').style.opacity = '0';
+        document.querySelector(".firstEvidence .freezing").classList.add('active');
 
-});
+        document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+        document.querySelector('.secondEvidence .spirit-box').style.display = 'block';  
 
-document.querySelector('.first-evidence .spirit-box').addEventListener('click', function() {
+        document.querySelector('.firstEvidence .emf-five').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'none';
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'none';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'none';
 
-    firstEvidence = "spiritBox";
+    } else if (clickedTimeOne % 2 == 0) {
 
-    // SHOW THIS
+        removeFirstActive();
+        removeSecondActive();
+        removeSecondEvidence();
+        removeThirdActive();
+        removeThirdEvidence();
 
-    document.querySelector('.second-evidence .ghost-writing').style.opacity = '1'; 
-    document.querySelector('.second-evidence .freezing').style.opacity = '1';
-    document.querySelector('.second-evidence .emf-five').style.opacity = '1';
-    document.querySelector('.second-evidence .ghost-orbs').style.opacity = '1';
-    document.querySelector('.second-evidence .fingerprints').style.opacity = '1'; 
-    
-    // HIDE THIS
+        document.querySelector('.firstEvidence .emf-five').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'block';
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'block';
 
-    document.querySelector('.first-evidence .emf-five').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-orbs').style.opacity = '0';
-    document.querySelector('.first-evidence .ghost-writing').style.opacity = '0';
-    document.querySelector('.first-evidence .freezing').style.opacity = '0';
-    document.querySelector('.first-evidence .fingerprints').style.opacity = '0';
+    }
 
 });
 
-// SECOND EVIDENCE --------------------------------------------------------------------------------------------------------->
+document.querySelector('.firstEvidence .ghost-orbs').addEventListener('click', function() {
 
-document.querySelector('.second-evidence .emf-five').addEventListener('click', function() {
+    clickedTimeOne++;
+
+    if (clickedTimeOne % 2 == 1) {
+
+        firstEvidence = "ghostOrbs";
+
+        document.querySelector(".firstEvidence .ghost-orbs").classList.add('active');
+
+        document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+        document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+        document.querySelector('.secondEvidence .freezing').style.display = 'block';
+        document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-writing').style.display = 'block'; 
+
+        document.querySelector('.firstEvidence .emf-five').style.display = 'none';
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'none';
+        document.querySelector('.firstEvidence .freezing').style.display = 'none';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'none';
+
+    } else if (clickedTimeOne % 2 == 0) {
+
+        removeFirstActive();
+        removeSecondActive();
+        removeSecondEvidence();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        document.querySelector('.firstEvidence .emf-five').style.display = 'block';
+        document.querySelector('.firstEvidence .freezing').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'block';
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'block';
+
+    }
+
+});
+
+document.querySelector('.firstEvidence .ghost-writing').addEventListener('click', function() {
+
+    clickedTimeOne++;
+
+    if (clickedTimeOne % 2 == 1) {
+
+        firstEvidence = "ghostWriting";
+
+        document.querySelector(".firstEvidence .ghost-writing").classList.add('active');
+
+        document.querySelector('.secondEvidence .freezing').style.display = 'block';
+        document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+        document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+        document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block'; 
+
+        document.querySelector('.firstEvidence .emf-five').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'none';
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'none';
+        document.querySelector('.firstEvidence .freezing').style.display = 'none';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'none';
+
+    } else if (clickedTimeOne % 2 == 0) {
+
+        removeFirstActive();
+        removeSecondActive();
+        removeSecondEvidence();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        document.querySelector('.firstEvidence .emf-five').style.display = 'block';
+        document.querySelector('.firstEvidence .freezing').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.firstEvidence .spirit-box').style.display = 'block';
+
+    }
+
+});
+
+document.querySelector('.firstEvidence .spirit-box').addEventListener('click', function() {
+
+    clickedTimeOne++;
+
+    if (clickedTimeOne % 2 == 1) {
+
+        firstEvidence = "spiritBox";
+
+        document.querySelector(".firstEvidence .spirit-box").classList.add('active');
+
+        document.querySelector('.secondEvidence .ghost-writing').style.display = 'block'; 
+        document.querySelector('.secondEvidence .freezing').style.display = 'block';
+        document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+        document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.secondEvidence .fingerprints').style.display = 'block'; 
+
+        document.querySelector('.firstEvidence .emf-five').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'none';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'none';
+        document.querySelector('.firstEvidence .freezing').style.display = 'none';
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'none';
+
+    } else if (clickedTimeOne % 2 == 0) {
+
+        removeFirstActive();
+        removeSecondActive();
+        removeSecondEvidence();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        document.querySelector('.firstEvidence .emf-five').style.display = 'block';
+        document.querySelector('.firstEvidence .freezing').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-orbs').style.display = 'block';
+        document.querySelector('.firstEvidence .fingerprints').style.display = 'block';
+        document.querySelector('.firstEvidence .ghost-writing').style.display = 'block';
+
+    }
+
+});
+
+document.querySelector('.secondEvidence .emf-five').addEventListener('click', function() {
+
+    clickedTimeTwo++;
+
+    if (clickedTimeTwo % 2 == 1) {
 
     secondEvidence = "emfFive";
 
-    if (firstEvidence === "fingerprints") {
+    document.querySelector(".secondEvidence .emf-five").classList.add('active');
 
-        // SHOW THIS
+        if (firstEvidence === "fingerprints") {
 
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
 
-        // HIDE THIS 
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            
+        } else if (firstEvidence === "freezing") {
 
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
 
-    } else if (firstEvidence === "freezing") {
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
 
-        // SHOW THIS
+        } else if (firstEvidence === "ghostOrbs") {
 
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
 
-        // HIDE THIS 
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
 
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
 
-    } else if (firstEvidence === "ghostOrbs") {
+        } else if (firstEvidence === "spiritBox") {
 
-        // SHOW THIS
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
 
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
 
-        // HIDE THIS 
+        } else if (firstEvidence === "ghostWriting") {
 
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
 
-    } else if (firstEvidence === "spiritBox") {
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+  
+        }
 
-        // SHOW THIS
+    } else if (clickedTimeTwo % 2 == 0) {
 
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
+        removeSecondActive();
+        removeThirdActive();
+        removeThirdEvidence();
+    
+        if (firstEvidence === "fingerprints") {
 
-        // HIDE THIS 
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
+        } else if (firstEvidence === "freezing") {
 
-    } else if (firstEvidence === "ghostWriting") {
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
 
-        // SHOW THIS
+        } else if (firstEvidence === "ghostOrbs") {
 
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
 
-        // HIDE THIS 
+        } else if (firstEvidence === "spiritBox") {
 
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
 
+        } else if (firstEvidence === "ghostWriting") {
+
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+
+        }
+    
     }
+
 });
 
-document.querySelector('.second-evidence .fingerprints').addEventListener('click', function() {
+document.querySelector('.secondEvidence .fingerprints').addEventListener('click', function() {
+
+    clickedTimeTwo++;
+
+    if (clickedTimeTwo % 2 == 1) {
 
     secondEvidence = "fingerprints";
+    document.querySelector(".secondEvidence .fingerprints").classList.add('active');
 
-    if (firstEvidence === "emfFive") {
+        if (firstEvidence === "emfFive") {
 
-        // SHOW THIS
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
 
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
 
-        // HIDE THIS 
+        } else if (firstEvidence === "freezing") {
 
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
 
-    } else if (firstEvidence === "freezing") {
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
 
-        // SHOW THIS
+        } else if (firstEvidence === "ghostOrbs") {
 
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+            document.querySelector('#ghost-type').textContent = 'Poltergeist';
 
-        // HIDE THIS 
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
 
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+        } else if (firstEvidence === "ghostWriting") {
 
-    } else if (firstEvidence === "ghostOrbs") {
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
 
-        // SHOW THIS
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
 
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
-        document.querySelector('#ghost-type').value = 'Poltergeist';
+        } else if (firstEvidence === "spiritBox") {
 
-        // HIDE THIS 
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
 
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
 
-    } else if (firstEvidence === "ghostWriting") {
+        }
 
-        // SHOW THIS
+    } else if (clickedTimeTwo % 2 == 0) {
 
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
+        removeSecondActive();
+        removeThirdActive();
+        removeThirdEvidence();
 
-        // HIDE THIS 
+        if (firstEvidence === "emfFive") {
 
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
 
-    } else if (firstEvidence === "spiritBox") {
+        } else if (firstEvidence === "freezing") {
 
-        // SHOW THIS
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
 
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
+        } else if (firstEvidence === "ghostOrbs") {
 
-        // HIDE THIS 
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
 
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+        } else if (firstEvidence === "ghostWriting") {
+
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "spiritBox") {
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        }
+    
+    }
+
+});
+
+document.querySelector('.secondEvidence .freezing').addEventListener('click', function() {
+
+    clickedTimeTwo++;
+
+    if (clickedTimeTwo % 2 == 1) {
+
+        secondEvidence = "freezing";
+        document.querySelector(".secondEvidence .freezing").classList.add('active');
+
+        if (firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+
+        } else if (firstEvidence === "fingerprints") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+
+        } else if (firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+
+        } else if (firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeTwo % 2 == 0) {
+
+        removeSecondActive();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        if (firstEvidence === "emfFive") {
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints") {
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "ghostWriting") {
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+
+        } else if (firstEvidence === "spiritBox") {
+
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        }
+
+    }
+
+});
+
+document.querySelector('.secondEvidence .ghost-orbs').addEventListener('click', function() {
+    
+    clickedTimeTwo++;
+
+    if (clickedTimeTwo % 2 == 1) {
+
+        secondEvidence = "ghostOrbs";
+        document.querySelector(".secondEvidence .ghost-orbs").classList.add('active');
+
+        if (firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+
+        } else if (firstEvidence === "fingerprints") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+            document.querySelector('#ghost-type').textContent = 'Poltergeist';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+
+        } else if (firstEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+
+        } else if (firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+
+        } else if (firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeTwo % 2 == 0) {
+
+        removeSecondActive();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        if (firstEvidence === "emfFive") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "freezing") {
+
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "ghostWriting") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+
+        } else if (firstEvidence === "spiritBox") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+
+        }
+
+    }
+
+});
+
+document.querySelector('.secondEvidence .ghost-writing').addEventListener('click', function() {
+
+    clickedTimeTwo++;
+
+    if (clickedTimeTwo % 2 == 1) {
+
+        secondEvidence = "ghostWriting";
+        document.querySelector(".secondEvidence .ghost-writing").classList.add('active');
+
+        if (firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (firstEvidence === "fingerprints") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (firstEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+
+        } else if (firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeTwo % 2 == 0) {
+
+        removeSecondActive();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        if (firstEvidence === "emfFive") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "freezing") {
+
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+
+        } else if (firstEvidence === "spiritBox") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        }
+
+    }
+
+});
+
+document.querySelector('.secondEvidence .spirit-box').addEventListener('click', function() {
+
+    clickedTimeTwo++;
+
+    if (clickedTimeTwo % 2 == 1) {
+
+        secondEvidence = "spiritBox";
+        document.querySelector(".secondEvidence .spirit-box").classList.add('active');
+
+        if (firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (firstEvidence === "fingerprints") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (firstEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+
+        } else if (firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'none';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeTwo % 2 == 0) {
+
+        removeSecondActive();
+        removeThirdActive();
+        removeThirdEvidence();
+
+        if (firstEvidence === "emfFive") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "freezing") {
+
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+
+        } else if (firstEvidence === "ghostWriting") {
+
+            document.querySelector('.secondEvidence .freezing').style.display = 'block';
+            document.querySelector('.secondEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.secondEvidence .emf-five').style.display = 'block';
+            document.querySelector('.secondEvidence .ghost-orbs').style.display = 'block';
+
+        }
+
+    }
+
+
+});
+
+document.querySelector('.thirdEvidence .emf-five').addEventListener('click', function() {
+
+    clickedTimeThree++;
+
+    if (clickedTimeThree % 2 == 1) {
+
+        thirdEvidence = "emfFive";
+        document.querySelector(".thirdEvidence .emf-five").classList.add('active');
+
+        if (firstEvidence === "fingerprints" && secondEvidence === "freezing") {
+            
+            document.querySelector('#ghost-type').textContent = 'Banshee';
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "freezing") {
+            
+            document.querySelector('#ghost-type').textContent = 'Banshee';
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
+            
+            document.querySelector('#ghost-type').textContent = 'Jinn';
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
+            
+            document.querySelector('#ghost-type').textContent = 'Jinn';
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
+            
+            document.querySelector('#ghost-type').textContent = 'Oni-Fans';
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
+            
+            document.querySelector('#ghost-type').textContent = 'Oni-Fans';
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
+            
+            document.querySelector('#ghost-type').textContent = 'Phantom';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
+            
+            document.querySelector('#ghost-type').textContent = 'Phantom';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "ghostWriting") {
+            
+            document.querySelector('#ghost-type').textContent = 'Fuckin\' Rev...';
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "ghostWriting") {
+            
+            document.querySelector('#ghost-type').textContent = 'Fuckin\' Rev...';
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "ghostWriting") {
+            
+            document.querySelector('#ghost-type').textContent = 'Shadey-Bitch';
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "ghostWriting") {
+            
+            document.querySelector('#ghost-type').textContent = 'Shadey-Bitch';
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeThree % 2 == 0) {
+
+        removeThirdActive();
+
+        if (firstEvidence === "fingerprints" && secondEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        }
+
+    }
+
+});
+
+document.querySelector('.thirdEvidence .fingerprints').addEventListener('click', function() {
+
+    clickedTimeThree++;
+
+    if (clickedTimeThree % 2 == 1) {
+
+        thirdEvidence = "fingerprints";
+        document.querySelector(".thirdEvidence .fingerprints").classList.add('active');
+
+        if (firstEvidence === "emfFive" && secondEvidence === "freezing") {
+
+            document.querySelector('#ghost-type').textContent = 'Banshee';
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "freezing") {
+
+            document.querySelector('#ghost-type').textContent = 'Banshee';
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Poltergiest';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Poltergiest';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        } else if (firstEvidence === "emfFive" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('#ghost-type').textContent = 'Fuckin\' Rev...';
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "ghostWriting") {
+            document.querySelector('#ghost-type').textContent = 'Fuckin\' Rev...';
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Spirit (Run Tyler!)';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Spirit (Run Tyler!)';
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Wraith';
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Wraith';
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeThree % 2 == 0) {
+
+        removeThirdActive();
+
+        if (firstEvidence === "emfFive" && secondEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (firstEvidence === "emfFive" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        }
+
+    }
+
+});
+
+document.querySelector('.thirdEvidence .freezing').addEventListener('click', function() {
+
+    clickedTimeThree++;
+
+    if (clickedTimeThree % 2 == 1) {
+
+        thirdEvidence = "freezing";
+        document.querySelector(".thirdEvidence .freezing").classList.add('active');
+
+        if (firstEvidence === "fingerprints" && secondEvidence === "emfFive") {
+
+            document.querySelector('#ghost-type').textContent = 'Banshee';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "emfFive") {
+
+            document.querySelector('#ghost-type').textContent = 'Banshee';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Demon';
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Demon';
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Mare';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Mare';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "emfFive") {
+
+            document.querySelector('#ghost-type').textContent = 'Phantom';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "emfFive") {
+
+            document.querySelector('#ghost-type').textContent = 'Phantom';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Wraith';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Wraith';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('#ghost-type').textContent = 'Yurei';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('#ghost-type').textContent = 'Yurei';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeThree % 2 == 0) {
+
+        removeThirdActive();
+
+        if (firstEvidence === "fingerprints" && secondEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        }
+
+    }
+
+});
+
+document.querySelector('.thirdEvidence .ghost-orbs').addEventListener('click', function() {
+
+    clickedTimeThree++;
+
+    if (clickedTimeThree % 2 == 1) {
+
+        thirdEvidence = "ghostOrbs";
+        document.querySelector(".thirdEvidence .ghost-orbs").classList.add('active');
+
+        if (firstEvidence === "emfFive" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Jinn';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Jinn';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Mare';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Mare';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+
+        } else if (firstEvidence === "emfFive" && secondEvidence === "freezing") {
+
+            document.querySelector('#ghost-type').textContent = 'Phantom';
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "freezing") {
+
+            document.querySelector('#ghost-type').textContent = 'Phantom';
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "emfFive") {
+
+            document.querySelector('#ghost-type').textContent = 'Shadey-Bitch';
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "emfFive") {
+
+            document.querySelector('#ghost-type').textContent = 'Shadey-Bitch';
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Poltergeist';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
+
+            document.querySelector('#ghost-type').textContent = 'Poltergeist';
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('#ghost-type').textContent = 'Yurei';
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('#ghost-type').textContent = 'Yurei';
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeThree % 2 == 0) {
+
+        removeThirdActive();
+
+        if (firstEvidence === "emfFive" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (firstEvidence === "emfFive" && secondEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        }
 
     }
 });
 
-document.querySelector('.second-evidence .freezing').addEventListener('click', function() {
+document.querySelector('.thirdEvidence .ghost-writing').addEventListener('click', function() {
 
-    secondEvidence = "freezing";
+    clickedTimeThree++;
 
-    if (firstEvidence === "emfFive") {
+    if (clickedTimeThree % 2 == 1) {
 
-        // SHOW THIS
+        thirdEvidence = "ghostWriting";
+        document.querySelector(".thirdEvidence .ghost-writing").classList.add('active');
 
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
+        if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
 
-        // HIDE THIS 
+            document.querySelector('#ghost-type').textContent = 'Demon';
 
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
 
-    } else if (firstEvidence === "fingerprints") {
+        } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
 
-        // SHOW THIS
+            document.querySelector('#ghost-type').textContent = 'Demon';
 
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
 
-        // HIDE THIS 
+        } else if (firstEvidence === "emfFive" && secondEvidence === "spiritBox") {
 
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+            document.querySelector('#ghost-type').textContent = 'Oni-Fans';
 
-    } else if (firstEvidence === "ghostOrbs") {
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
 
-        // SHOW THIS
+        } else if (secondEvidence === "emfFive" && firstEvidence === "spiritBox") {
 
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
+            document.querySelector('#ghost-type').textContent = 'Oni-Fans';
 
-        // HIDE THIS 
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
 
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+        } else if (firstEvidence === "emfFive" && secondEvidence === "fingerprints") {
 
-    } else if (firstEvidence === "ghostWriting") {
+            document.querySelector('#ghost-type').textContent = 'Fuckin\' Rev...';
 
-        // SHOW THIS
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
 
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
+        } else if (secondEvidence === "emfFive" && firstEvidence === "fingerprints") {
 
-        // HIDE THIS 
+            document.querySelector('#ghost-type').textContent = 'Fuckin\' Rev...';
 
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
 
-    } else if (firstEvidence === "spiritBox") {
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "emfFive") {
 
-        // SHOW THIS
+            document.querySelector('#ghost-type').textContent = 'Shadey-Bitch';
 
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
 
-        // HIDE THIS 
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "emfFive") {
 
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+            document.querySelector('#ghost-type').textContent = 'Shadey-Bitch';
 
-    }
-});
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
 
-document.querySelector('.second-evidence .ghost-orbs').addEventListener('click', function() {
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
 
-    secondEvidence = "ghostOrbs";
+            document.querySelector('#ghost-type').textContent = 'Spirit (Run Tyler!)';
 
-    if (firstEvidence === "emfFive") {
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
 
-        // SHOW THIS
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
 
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
+            document.querySelector('#ghost-type').textContent = 'Spirit (Run Tyler!)';
 
-        // HIDE THIS 
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+        } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
 
-    } else if (firstEvidence === "fingerprints") {
+            document.querySelector('#ghost-type').textContent = 'Yurei';
 
-        // SHOW THIS
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
 
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
-        document.querySelector('#ghost-type').value = 'Poltergeist';
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
 
-        // HIDE THIS 
+            document.querySelector('#ghost-type').textContent = 'Yurei';
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
 
-    } else if (firstEvidence === "freezing") {
+        }
 
-        // SHOW THIS
+    } else if (clickedTimeThree % 2 == 0) {
 
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
+        removeThirdActive();
 
-        // HIDE THIS 
+        if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
 
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
 
-    } else if (firstEvidence === "ghostWriting") {
+        } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
 
-        // SHOW THIS
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
 
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
+        } else if (firstEvidence === "emfFive" && secondEvidence === "spiritBox") {
 
-        // HIDE THIS 
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
+        } else if (secondEvidence === "emfFive" && firstEvidence === "spiritBox") {
 
-    } else if (firstEvidence === "spiritBox") {
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
 
-        // SHOW THIS
+        } else if (firstEvidence === "emfFive" && secondEvidence === "fingerprints") {
 
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
 
-        // HIDE THIS 
+        } else if (secondEvidence === "emfFive" && firstEvidence === "fingerprints") {
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+
+        } else if (firstEvidence === "ghostOrbs" && secondEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (secondEvidence === "ghostOrbs" && firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .spirit-box').style.display = 'block';
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        }
 
     }
+
 });
 
-document.querySelector('.second-evidence .ghost-writing').addEventListener('click', function() {
+document.querySelector('.thirdEvidence .spirit-box').addEventListener('click', function() {
 
-    secondEvidence = "ghostWriting";
+    clickedTimeThree++;
 
-    if (firstEvidence === "emfFive") {
+    if (clickedTimeThree % 2 == 1) {
 
-        // SHOW THIS
+        thirdEvidence = "spiritBox";
+        document.querySelector(".thirdEvidence .spirit-box").classList.add('active');
 
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
+        if (firstEvidence === "freezing" && secondEvidence === "ghostWriting") {
+            
+            document.querySelector('#ghost-type').textContent = 'Demon';
 
-        // HIDE THIS
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostWriting") {
+            
+            document.querySelector('#ghost-type').textContent = 'Demon';
 
-    } else if (firstEvidence === "fingerprints") {
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
 
-        // SHOW THIS
+        } else if (firstEvidence === "emfFive" && secondEvidence === "ghostOrbs") {
+            
+            document.querySelector('#ghost-type').textContent = 'Jinn';
 
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
 
-        // HIDE THIS
+        } else if (secondEvidence === "emfFive" && firstEvidence === "ghostOrbs") {
+            
+            document.querySelector('#ghost-type').textContent = 'Jinn';
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
+            document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
 
-    } else if (firstEvidence === "freezing") {
+        } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
+            
+            document.querySelector('#ghost-type').textContent = 'Mare';
 
-        // SHOW THIS
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
 
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '1';
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
+            
+            document.querySelector('#ghost-type').textContent = 'Mare';
 
-        // HIDE THIS
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
 
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "emfFive") {
+            
+            document.querySelector('#ghost-type').textContent = 'Oni-Fans';
 
-    } else if (firstEvidence === "ghostOrbs") {
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
 
-        // SHOW THIS
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "emfFive") {
+            
+            document.querySelector('#ghost-type').textContent = 'Oni-Fans';
 
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
 
-        // HIDE THIS
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "ghostOrbs") {
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
+            document.querySelector('#ghost-type').textContent = 'Poltergeist';
 
-    } else if (firstEvidence === "spiritBox") {
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "ghostOrbs") {
 
-        // SHOW THIS
+            document.querySelector('#ghost-type').textContent = 'Poltergeist';
 
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "ghostWriting") {
+            
+            document.querySelector('#ghost-type').textContent = 'Spirit (Run Tyler!)';
 
-        // HIDE THIS
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
 
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "ghostWriting") {
+            
+            document.querySelector('#ghost-type').textContent = 'Spirit (Run Tyler!)';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "freezing") {
+            
+            document.querySelector('#ghost-type').textContent = 'Wraith';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "freezing") {
+            
+            document.querySelector('#ghost-type').textContent = 'Wraith';
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+
+        }
+
+    } else if (clickedTimeThree % 2 == 0) {
+
+        removeThirdActive();
+
+        if (firstEvidence === "freezing" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+
+        } else if (firstEvidence === "emfFive" && secondEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (secondEvidence === "emfFive" && firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .freezing').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+            document.querySelector('.thirdEvidence .ghost-writing').style.display = 'block';
+
+        } else if (firstEvidence === "ghostWriting" && secondEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (secondEvidence === "ghostWriting" && firstEvidence === "emfFive") {
+
+            document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'block';
+            document.querySelector('.thirdEvidence .fingerprints').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "ghostWriting") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        } else if (firstEvidence === "fingerprints" && secondEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        } else if (secondEvidence === "fingerprints" && firstEvidence === "freezing") {
+
+            document.querySelector('.thirdEvidence .emf-five').style.display = 'block';
+
+        }
 
     }
+
 });
-
-document.querySelector('.second-evidence .spirit-box').addEventListener('click', function() {
-
-    secondEvidence = "spiritBox";
-
-    if (firstEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
-
-        // HIDE THIS
-
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "fingerprints") {
-
-        // SHOW THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
-
-        // HIDE THIS
-
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "freezing") {
-
-        // SHOW THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '1';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '1';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
-
-        // HIDE THIS
-
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
-
-        // HIDE THIS
-
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostWriting") {
-
-        // SHOW THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '1';
-        document.querySelector('.third-evidence .freezing').style.opacity = '1';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '1';
-
-        // HIDE THIS
-
-        document.querySelector('.second-evidence .freezing').style.opacity = '0';
-        document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-
-    }
-});
-
-// THIRD EVIDENCE --------------------------------------------------------------------------------------------------------->
-
-document.querySelector('.third-evidence .emf-five').addEventListener('click', function() {
-
-    thirdEvidence = "emfFive";
-
-    if (firstEvidence === "fingerprints" && secondEvidence === "freezing") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Banshee';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "freezing") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Banshee';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Jinn';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Jinn';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Oni-Fans';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Oni-Fans';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Phantom';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Phantom';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (firstEvidence === "fingerprints" && secondEvidence === "ghostWriting") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Reve... Fuck this I am outta here!';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "ghostWriting") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Reve... Fuck this I am outta here!';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostOrbs" && secondEvidence === "ghostWriting") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Shadey-Bitch';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostOrbs" && firstEvidence === "ghostWriting") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Shadey-Bitch';
-        
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    }
-});
-
-document.querySelector('.third-evidence .fingerprints').addEventListener('click', function() {
-
-    thirdEvidence = "fingerprints";
-
-    if (firstEvidence === "emfFive" && secondEvidence === "freezing") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Banshee';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (secondEvidence === "emfFive" && firstEvidence === "freezing") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Banshee';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Poltergiest';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Poltergiest';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (firstEvidence === "emfFive" && secondEvidence === "ghostWriting") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Reve... Fuck this I am outta here!';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (secondEvidence === "emfFive" && firstEvidence === "ghostWriting") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Reve... Fuck this I am outta here!';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Spirit (Run Tyler!)';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Spirit (Run Tyler!)';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    } else if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Wraith';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Wraith';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    }
-});
-
-document.querySelector('.third-evidence .freezing').addEventListener('click', function() {
-
-    thirdEvidence = "freezing";
-
-    if (firstEvidence === "fingerprints" && secondEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Banshee';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Banshee';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostWriting" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Demon';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostWriting" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Demon';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostOrbs" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Mare';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostOrbs" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Mare';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostOrbs" && secondEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Phantom';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostOrbs" && firstEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Phantom';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Wraith';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Wraith';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostOrbs" && secondEvidence === "ghostWriting") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Yurei';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostOrbs" && firstEvidence === "ghostWriting") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Yurei';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    }
-});
-
-document.querySelector('.third-evidence .ghost-orbs').addEventListener('click', function() {
-
-    thirdEvidence = "ghostOrbs";
-
-    if (firstEvidence === "emfFive" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Jinn';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (secondEvidence === "emfFive" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Jinn';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Mare';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Mare';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (firstEvidence === "emfFive" && secondEvidence === "freezing") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Phantom';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (secondEvidence === "emfFive" && firstEvidence === "freezing") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Phantom';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostWriting" && secondEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Shadey-Bitch';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostWriting" && firstEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Shadey-Bitch';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Poltergeist';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Poltergeist';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (firstEvidence === "freezing" && secondEvidence === "ghostWriting") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Yurei';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (secondEvidence === "freezing" && firstEvidence === "ghostWriting") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Yurei';
-
-        // HIDE THIS 
-
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    }
-});
-
-document.querySelector('.third-evidence .ghost-writing').addEventListener('click', function() {
-
-    thirdEvidence = "ghostWriting";
-
-    if (firstEvidence === "freezing" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Demon';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (secondEvidence === "freezing" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Demon';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "emfFive" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Oni-Fans';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (secondEvidence === "emfFive" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Oni-Fans';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "emfFive" && secondEvidence === "fingerprints") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Reve... Fuck this I am outta here!';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (secondEvidence === "emfFive" && firstEvidence === "fingerprints") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Reve... Fuck this I am outta here!';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostOrbs" && secondEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Shadey-Bitch';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostOrbs" && firstEvidence === "emfFive") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Shadey-Bitch';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-
-    } else if (firstEvidence === "fingerprints" && secondEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Spirit (Run Tyler!)';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "spiritBox") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Spirit (Run Tyler!)';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Yurei';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Yurei';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    }
-});
-
-document.querySelector('.third-evidence .spirit-box').addEventListener('click', function() {
-
-    thirdEvidence = "spiritBox";
-
-    if (firstEvidence === "freezing" && secondEvidence === "ghostWriting") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Demon';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (secondEvidence === "freezing" && firstEvidence === "ghostWriting") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Demon';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-
-    } else if (firstEvidence === "emfFive" && secondEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Jinn';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (secondEvidence === "emfFive" && firstEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Jinn';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .freezing').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (firstEvidence === "freezing" && secondEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Mare';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (secondEvidence === "freezing" && firstEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Mare';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-        document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-
-    } else if (firstEvidence === "ghostWriting" && secondEvidence === "emfFive") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Oni-Fans';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (secondEvidence === "ghostWriting" && firstEvidence === "emfFive") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Oni-Fans';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-        document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-
-    } else if (firstEvidence === "fingerprints" && secondEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Poltergeist';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "ghostOrbs") {
-
-        // SHOW THIS
-
-        document.querySelector('#ghost-type').value = 'Poltergeist';
-
-    } else if (firstEvidence === "fingerprints" && secondEvidence === "ghostWriting") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Spirit (Run Tyler!)';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "ghostWriting") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Spirit (Run Tyler!)';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    } else if (firstEvidence === "fingerprints" && secondEvidence === "freezing") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Wraith';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    } else if (secondEvidence === "fingerprints" && firstEvidence === "freezing") {
-
-        // SHOW THIS
-        
-        document.querySelector('#ghost-type').value = 'Wraith';
-
-        // HIDE THIS
-
-        document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-
-    }
-});
-
-// THIS WILL RESET THE GHOST TYPE
 
 document.querySelector('#game-reset').addEventListener('click', function() {
-    
-    firstEvidence = '';
-    secondEvidence = '';
-    thirdEvidence = '';
 
-    document.querySelector('.first-evidence .emf-five').style.opacity = '1';
-    document.querySelector('.first-evidence .fingerprints').style.opacity = '1';
-    document.querySelector('.first-evidence .ghost-orbs').style.opacity = '1';
-    document.querySelector('.first-evidence .ghost-writing').style.opacity = '1';
-    document.querySelector('.first-evidence .freezing').style.opacity = '1';
-    document.querySelector('.first-evidence .spirit-box').style.opacity = '1';
-    document.querySelector('.second-evidence .emf-five').style.opacity = '0';
-    document.querySelector('.second-evidence .fingerprints').style.opacity = '0';
-    document.querySelector('.second-evidence .freezing').style.opacity = '0';
-    document.querySelector('.second-evidence .ghost-orbs').style.opacity = '0';
-    document.querySelector('.second-evidence .ghost-writing').style.opacity = '0';
-    document.querySelector('.second-evidence .spirit-box').style.opacity = '0';
-    document.querySelector('.third-evidence .emf-five').style.opacity = '0';
-    document.querySelector('.third-evidence .fingerprints').style.opacity = '0';
-    document.querySelector('.third-evidence .freezing').style.opacity = '0';
-    document.querySelector('.third-evidence .ghost-orbs').style.opacity = '0';
-    document.querySelector('.third-evidence .ghost-writing').style.opacity = '0';
-    document.querySelector('.third-evidence .spirit-box').style.opacity = '0';
+    removeFirstActive();
+    removeSecondActive();
+    removeSecondEvidence();
+    removeThirdActive();
+    removeThirdEvidence();
 
-    document.querySelector('#ghost-type').value = '';
+    document.querySelector('.firstEvidence .emf-five').style.display = 'block';
+    document.querySelector('.firstEvidence .fingerprints').style.display = 'block';
+    document.querySelector('.firstEvidence .ghost-orbs').style.display = 'block';
+    document.querySelector('.firstEvidence .ghost-writing').style.display = 'block';
+    document.querySelector('.firstEvidence .freezing').style.display = 'block';
+    document.querySelector('.firstEvidence .spirit-box').style.display = 'block';
+    document.querySelector('.secondEvidence .emf-five').style.display = 'none';
+    document.querySelector('.secondEvidence .fingerprints').style.display = 'none';
+    document.querySelector('.secondEvidence .freezing').style.display = 'none';
+    document.querySelector('.secondEvidence .ghost-orbs').style.display = 'none';
+    document.querySelector('.secondEvidence .ghost-writing').style.display = 'none';
+    document.querySelector('.secondEvidence .spirit-box').style.display = 'none';
+    document.querySelector('.thirdEvidence .emf-five').style.display = 'none';
+    document.querySelector('.thirdEvidence .fingerprints').style.display = 'none';
+    document.querySelector('.thirdEvidence .freezing').style.display = 'none';
+    document.querySelector('.thirdEvidence .ghost-orbs').style.display = 'none';
+    document.querySelector('.thirdEvidence .ghost-writing').style.display = 'none';
+    document.querySelector('.thirdEvidence .spirit-box').style.display = 'none';
+
+    document.querySelector('#ghost-type').textContent = '';
     document.querySelector('#ghost-name').value = '';
     document.querySelector('#mission-one').value = 'default';
     document.querySelector('#mission-two').value = 'default';

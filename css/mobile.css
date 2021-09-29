@@ -1,0 +1,198 @@
+@media (max-width: 991px) {
+
+    .creator h1 {
+        font-size: 2.5rem;
+    }
+
+    .evidence-info {
+        -webkit-flex: 0 0 100% !important;
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .important-info {
+        -webkit-flex: 0 0 100% !important;
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .ghost-finder {
+        padding: 0px;
+    }
+
+    ul.firstEvidence, ul.secondEvidence, ul.thirdEvidence {
+        border: 1px solid white;
+        padding: 10px 0px 30px;
+        border-radius: 30px;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .ghost-details-shell {
+        width: 90%;
+        padding-top: 30px;
+    }
+
+    fieldset {
+        width: 100%;
+    }
+
+    select#mission-one, select#mission-two, select#mission-three {
+        width: 100%;
+    }
+
+    .ghost-results fieldset {
+        margin: 0 auto 30px;
+        width: 90%;
+    }
+
+    .ghost-finder {
+        height: unset;
+        padding: 40px 0px;
+    }
+
+    .emf-five:before {
+        right: 0;
+        left: 0;
+        bottom: -5px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .fingerprints:before {
+        right: 0;
+        left: 0;
+        bottom: -5px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .freezing:before {
+        right: 0;
+        left: 0;
+        bottom: -5px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .ghost-orbs:before {
+        right: 0;
+        left: 0;
+        bottom: -5px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .ghost-writing:before {
+        right: 0;
+        left: 0;
+        bottom: -5px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+
+    .spirit-box:before {
+        right: 0;
+        left: 0;
+        bottom: -5px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .dots:before {
+        right: 0;
+        left: 0;
+        bottom: -5px;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    body, html {
+        overflow-x: hidden;
+    }
+
+    ul.firstEvidence, ul.secondEvidence, ul.thirdEvidence {
+        width: 100px;
+    }
+
+    ul.firstEvidence, ul.secondEvidence, ul.thirdEvidence {
+        padding: 20px 0px 40px;
+    }
+
+    footer li {
+        padding-top: 20px;
+    }
+
+    footer li:after {
+        content: none;
+    }
+
+    footer li:first-child {
+        padding-top: 0px;
+    }
+
+    .result h2 {
+        padding-top: 0px;
+        text-align: center;
+    }
+
+    .firstEvidence, .secondEvidence, .thirdEvidence {
+        letter-spacing: 3px;
+    }
+
+    .row {
+        -webkit-display: unset;
+        -moz-display: unset;
+        -ms-display: unset;
+        -o-display: unset;
+        display: unset;
+        -webkit-flex-wrap: unset;
+        -ms-flex-wrap: unset;
+        flex-wrap: unset;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    #ccm-layout-column-wrapper-8 div.ccm-layout-column-inner {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .firstEvidence li a img, .secondEvidence li a img, .thirdEvidence li a img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .fingerprints:before {
+        content: 'Fingies';
+    }
+
+    .ghost-orbs:before {
+        content: 'Orbs';
+    }
+
+    .ghost-writing:before {
+        content: 'Writing';
+    }
+    
+
+    .spirit-box:before {
+        content: 'Box';
+    }
+
+}

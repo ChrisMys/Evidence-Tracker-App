@@ -1,0 +1,417 @@
+body {
+    background: black;
+}
+
+.firstEvidence li img,
+.secondEvidence li img,
+.thirdEvidence li img {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border-radius: 20%;
+    padding: 5px;
+}
+
+.firstEvidence li img:hover,
+.secondEvidence li img:hover,
+.thirdEvidence li img:hover,
+.firstEvidence li img:focus,
+.secondEvidence li img:focus,
+.thirdEvidence li img:focus {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.firstEvidence,
+.secondEvidence,
+.thirdEvidence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    position: relative;
+    width: 200px;
+    padding: 0;
+    font-family: var(--font);
+    letter-spacing: 5px;
+}
+
+ul.firstEvidence, ul.secondEvidence, ul.thirdEvidence {
+    border: 1px solid white;
+    padding: 20px 0px 40px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+p.reset a:hover,
+p.reset a:focus {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.5;
+}
+
+p.reset {
+    padding: 20px 0 0;
+}
+
+p.reset a {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3rem;
+    border: 1px solid white;
+    padding: 10px 30px;
+    border-radius: 15px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.creator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.important-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    flex-direction: column;
+    height: 100%;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.result h2 {
+    background: black;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding-top: 10px;
+    font-family: var(--font);
+    letter-spacing: 10px;
+}
+
+li.emf-five, li.fingerprints, li.freezing, li.ghost-orbs, li.ghost-writing, li.spirit-box, li.dots {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.emf-five:before {
+    content: 'EMF5';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0;
+    text-align: center;
+    bottom: -5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.fingerprints:before {
+    content: 'Fingerprints';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0;
+    text-align: center;
+    bottom: -5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.freezing:before {
+    content: 'Freezing';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0;
+    text-align: center;
+    bottom: -5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.ghost-orbs:before {
+    content: 'Ghost Orbs';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0;
+    text-align: center;
+    bottom: -5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.ghost-writing:before {
+    content: 'Ghost Writing';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0;
+    text-align: center;
+    bottom: -5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.spirit-box:before {
+    content: 'Spirit Box';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0;
+    text-align: center;
+    bottom: -5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.dots:before {
+    content: 'Dots';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0;
+    text-align: center;
+    bottom: -5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.secondEvidence .emf-five,
+.secondEvidence .fingerprints,
+.secondEvidence .freezing,
+.secondEvidence .ghost-orbs,
+.secondEvidence .ghost-writing,
+.secondEvidence .spirit-box,
+.secondEvidence .dots {
+    display: none;
+}
+
+.thirdEvidence .emf-five,
+.thirdEvidence .fingerprints,
+.thirdEvidence .freezing,
+.thirdEvidence .ghost-orbs,
+.thirdEvidence .ghost-writing,
+.thirdEvidence .spirit-box,
+.thirdEvidence .dots {
+    display: none;
+}
+
+.active img {
+    box-shadow: 0px 0px 10px red;
+}
+
+fieldset input {
+    width: 100%;
+    background: black;
+    border: 1px solid white;
+    padding: 20px;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+fieldset label {
+    color: white;
+    font-size: 3rem;
+}
+
+fieldset {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    width: 40%;
+    letter-spacing: 3px;
+}
+
+fieldset input:last-child {
+    margin-bottom: 0;
+}
+
+select#mission-one, select#mission-two, select#mission-three {
+    padding: 20px;
+    background: black;
+    border: 1px solid white;
+    color: white;
+    font-size: 2rem;
+    margin: 20px 0 23px 0;
+    border-radius: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: sans-serif;
+}
+
+.creator h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 4.5rem;
+    font-family: var(--font);
+    letter-spacing: 10px;
+}
+
+.creator h1 em {
+    font-size: 1.5rem;
+}
+
+.result fieldset {
+    height: 100px;
+    padding: 5px 20px 0;
+    margin: 0;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result fieldset input {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+.result legend {
+    color: white;
+    font-size: 2rem;
+    font-family: var(--font);
+    letter-spacing: 5px;
+}
+
+input#ghost-name {
+    padding: 20px 25px;
+    width: 100%;
+    background: black;
+    border: 1px solid white;
+    color: white;
+    font-size: 2rem;
+    margin: 30px 0 20px;
+    border-radius: 15px;
+    font-family: sans-serif;
+}
+
+input#ghost-name::placeholder {
+    color: white;
+}
+
+.col-sm-6.important-info label {
+    color: white;
+    font-size: 3rem;
+    padding: 20px;
+}
+
+p.brand img {
+    width: 100px;
+}
+
+footer li {
+    font-size: 1.8rem;
+    color: white;
+    font-family: var(--font);
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+footer li:last-child {
+    margin-bottom: 0px;
+}
+
+footer li a {
+    color: white;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+footer li a:hover,
+footer li a:focus,
+footer p a:hover,
+footer p a:focus {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.5;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    font-family: var(--font);
+    font-size: 1.5rem;
+    padding-top: 20px;
+    letter-spacing: 3px;
+}
+
+footer p a {
+    color: white;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.ghost-results fieldset {
+    height: 100px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    color: white;
+    font-size: 2rem;
+    font-family: var(--font);
+    width: 100%;
+    text-align: center;
+    padding: 15px 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.ghost-finder {
+    height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
